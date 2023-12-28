@@ -1,5 +1,7 @@
 package com.example.consumeapi.ui.kontak.viewmodel
 
+import com.example.consumeapi.model.Kontak
+
 data class InsertUiState(
     val insertUiEvent: InsertUiEvent = InsertUiEvent(),
 )
@@ -8,4 +10,11 @@ data class InsertUiEvent(
     val nama: String = "",
     val email: String = "",
     val nohp: String = "",
+)
+
+fun InsertUiEvent.toKontak(): Kontak = Kontak(
+    id = id,
+    nama = nama,
+    email = email,
+    noHp = nohp
 )
